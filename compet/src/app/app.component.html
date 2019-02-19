@@ -32,10 +32,10 @@
         </ul>
         <ul class="list-inline mb-0">
           <li class="list-inline-item mr-0 p-md-3 p-2 border-right border-left border-white-0_1">
-            <a class="nav-link" routerLink = "login" routerLinkActive = "active">Connexion</a>
+            <a class="nav-link" routerLink = "login" routerLinkActive = "active">Login</a>
           </li>
           <li class="list-inline-item mr-0 p-md-3 p-2 border-right border-white-0_1">
-            <a href="page-signup.html">Inscription</a>
+            <a class="nav-link " routerLink = "inscription" routerLinkActive = "active"  >Inscription</a>
           </li>
         </ul>
       </div> 
@@ -60,10 +60,24 @@
                 <li class="nav-item nav-item__has-megamenu megamenu-col-2">
                   <a class="nav-link" href="#" >Acceuil</a>
                 </li>
-    
                 <li class="nav-item nav-item__has-dropdown">
-                    <a class="nav-link " href="#" >Competition</a>
+                  <a class="nav-link " routerLink = "listadmin" routerLinkActive = "active" >Adminstration</a>
+              </li>
+              <li class="nav-item nav-item__has-dropdown">
+                <a class="nav-link " routerLink = "enregcategorie" routerLinkActive = "active" >Categorie</a>
+            </li>
+                <li class="nav-item nav-item__has-dropdown">
+                    <a class="nav-link " routerLink = "listcompetition" routerLinkActive = "active" >Competition</a>
                 </li>
+                
+                <li class="nav-item nav-item__has-dropdown">
+                  <a class="nav-link " routerLink = "listeorganisateur" routerLinkActive = "active" >Organisateur</a>
+              </li>
+              <li class="nav-item nav-item__has-dropdown">
+                <a class="nav-link " routerLink = "listparticipant" routerLinkActive = "active" >Participant</a>
+            </li>
+           
+
               </ul>
           </div>	
         </div>
@@ -119,8 +133,8 @@
           <ul class="list-unstyled marginTop-40">
             <li class="mb-2"><a href="#">A propos</a></li>
             <li class="mb-2"><a href="#">Nous contacter</a></li>
-            <li class="mb-2"><a href="#">Connexion</a></li>
-            <li class="mb-2"><a href="#">Inscription</a></li>
+            <li class="mb-2">  <a  routerLink = "login" routerLinkActive = "active" >Connexion</a></li>
+            <li class="mb-2">  <a  routerLink = "inscription" routerLinkActive = "active" >Inscription</a></li>
           
           </ul>
         </div>

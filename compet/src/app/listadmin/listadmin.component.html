@@ -1,0 +1,154 @@
+<div class="padding-y-80 bg-cover" data-dark-overlay="6" style="background:url(assets/img/breadcrumb-bg.jpg) no-repeat">
+  <div class="container">
+    <h2 class="text-white">
+      Gestion des administrateurs
+    </h2>
+    <ol class="breadcrumb breadcrumb-double-angle text-white bg-transparent p-0">  
+      <li class="breadcrumb-item" ><a href="#" data-toggle="modal" data-target="#modal__Scrolling-long-1">Nouveau administrateur</a></li>
+    </ol>
+  </div>
+</div>
+<div style="margin: auto; width:70%">
+  <br>
+  <table id="example" class="table table-striped table-bordered" style="width:100%">
+    <thead class="thead-dark">
+    <tr>
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th>Mail</th>
+    <th>Pseudo</th>
+    <th>detail</th>
+    <th>Modifier</th>
+    </tr>
+    <tbody >
+        <tr *ngFor = "let val of data">
+            <td>{{val.nom_Pers}}</td>
+            <td>{{val.prenom_Pers}}</td>
+            <td>{{val.mail_Pers}}</td>
+            <td>{{val.pseudo}}</td>
+    
+  
+            <td><button class="btn btn-info btn-xs mr-3 mb-3"type="button" data-toggle="modal" data-target="#modal__Scrolling-long" (click)="detailaddmin(val.id_Pers)" >Detail</button></td>
+            <td><button class="btn btn-warning btn-xs mr-3 mb-3"  >Modifer</button></td>
+          </tr>
+  </tbody>
+  </table>
+</div>
+
+
+ <!-- Modal small-->
+ <div class="modal fade" id="modal__small" tabindex="-1" role="dialog" aria-labelledby="modal__small" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Action</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="ti-close font-size-14"></i>
+          </button>
+        </div>
+        <div class="modal-body py-4">
+          Voulez-vous vraiment faire cette modification?
+        </div>
+        <div class="modal-footer py-4">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">NON</button>
+          <button type="button" class="btn btn-success">OUI</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Modal Scrolling long-->
+<div class="modal fade" id="modal__Scrolling-long" tabindex="-1" role="dialog" aria-labelledby="modal__Scrolling-long" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Detail d'un administrateur</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="ti-close font-size-14"></i>
+          </button>
+        </div>
+        <div class="modal-body py-4">
+           <div class="container" *ngFor = "let value of detailadmin">
+                  <div class="card shadow-v1" >
+                        <div class="card-header text-center border-bottom pt-5 mb-4">
+                         <img class="rounded-circle mb-4" src="assets/img/262x230/7.jpg" width="200" height="200" alt="">
+                         <h4 >
+                         {{value.nom_Pers}} {{value.prenom_Pers}}
+                         </h4>
+                        </div>
+                        <div class="card-body border-bottom">
+                          <ul class="list-unstyled">
+                            <li class="mb-3">
+                              <span class="d-block">Email:</span>
+                              <a class="h6" > {{value.mail_Pers}}</a>
+                            </li>
+                            <li class="mb-3" hi>
+                              <span class="d-block">Pseudo</span>
+                              <a class="h6"> {{value.pseudo}}</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                </div> <!--END container-->
+        </div>
+        <div class="modal-footer py-4">
+          <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+   
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+ <!-- Modal Scrolling long-->
+ <div class="modal fade" id="modal__Scrolling-long-1" tabindex="-1" role="dialog" aria-labelledby="modal__Scrolling-long" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Enregistrer un administrateur</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="ti-close font-size-14"></i>
+          </button>
+        </div>
+        <div class="modal-body py-4">
+            <div >
+                <form #Form="ngForm" (ngSubmit)="onSubmit()">
+               <div class="col-12 mx-auto">
+                 <div class="row form-group">
+                   <label for="example-text-input" class="col-2 col-form-label text-left">Nom</label>
+                   <div class="col-10">
+                     <input class="form-control" type="text" [(ngModel)]="adminisatrateur.nom_Pers"  placeholder="Nom" name="nom_Pers"  id="nom_Pers">
+                   </div>
+                 </div>
+                 <div class="row form-group">
+                   <label for="example-text-input" class="col-2 col-form-label text-left">Prenom</label>
+                   <div class="col-10">
+                     <input class="form-control" type="text" [(ngModel)]="adminisatrateur.prenom_Pers"  placeholder="Prenom" name="prenom_Pers"  id="prenom_Pers">
+                   </div>
+                 </div>
+                 <div class="row form-group">
+                   <label for="example-text-input" class="col-2 col-form-label text-left">Nom d'utilisateur</label>
+                   <div class="col-10">
+                     <input class="form-control" type="text" [(ngModel)]="adminisatrateur.pseudo" placeholder="Nom d'utilisateur"  name="pseudo"  id="pseudo">
+                   </div>
+                 </div>
+                 <div class="row form-group">
+                   <label for="example-text-input" class="col-2 col-form-label text-left">Mail</label>
+                   <div class="col-10">
+                     <input class="form-control" type="text" [(ngModel)]="adminisatrateur.mail_Pers" placeholder="Mail"  name="mail_Pers"  id="mail_Pers">
+                   </div>
+                 </div>
+                 <div class="row form-group">
+                     <button class="btn btn-secondary active mr-2 mb-3" data-dismiss="modal">Annuler</button>
+                     <button class="btn btn-primary active mr-2 mb-3"  type="submit" >Valider</button>
+                 </div>
+               </div>
+             </form>
+              </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  

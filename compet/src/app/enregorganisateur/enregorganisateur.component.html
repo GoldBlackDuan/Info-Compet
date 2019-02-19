@@ -1,0 +1,63 @@
+<div class="padding-y-80 bg-cover" data-dark-overlay="6" style="background:url(assets/img/breadcrumb-bg.jpg) no-repeat">
+  <div class="container">
+    <h2 class="text-white">
+      Gestion des competitions
+    </h2>
+    <ol class="breadcrumb breadcrumb-double-angle text-white bg-transparent p-0">  
+      <li class="breadcrumb-item" ><a routerLink = "../listeorganisateur" routerLinkActive = "active">Liste des organisateurs</a></li>
+    </ol>
+  </div>
+</div>
+<section class="padding-y-0 border-bottom border-center">
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="form-basic" role="tabpanel">
+      <div class="padding-y-0">
+        <div class="container">
+          <div class="row mt-5">
+           <div class="col-12 text-center my-5">
+             <h4>
+               Enregistrement d'un organisateur
+             </h4>
+           </div>
+           <div>
+             <form #Form="ngForm" (ngSubmit)="onSubmit()">
+            <div class="col-12 mx-auto">
+              <div class="row form-group">
+                <label for="example-text-input" class="col-2 col-form-label text-left">Nom</label>
+                <div class="col-10">
+                  <input class="form-control" type="text" [(ngModel)]="organisateur.nom_Pers"  placeholder="Nom" name="nom_Pers"  id="nom_Pers">
+                </div>
+              </div>
+              <div class="row form-group">
+                <label for="example-text-input" class="col-2 col-form-label text-left">Prenom</label>
+                <div class="col-10">
+                  <input class="form-control" type="text" [(ngModel)]="organisateur.prenom_Pers"  placeholder="Prenom" name="prenom_Pers"  id="prenom_Pers">
+                </div>
+              </div>
+              <div class="row form-group">
+                <label for="example-text-input" class="col-2 col-form-label text-left">Nom d'utilisateur</label>
+                <div class="col-10">
+                  <input class="form-control" type="text" [(ngModel)]="organisateur.pseudo" placeholder="Nom d'utilisateur"  name="pseudo"  id="pseudo">
+                </div>
+              </div>
+              <div class="row form-group">
+                <label for="example-text-input" class="col-2 col-form-label text-left">Mail</label>
+                <div class="col-10">
+                  <input class="form-control" type="text" [(ngModel)]="organisateur.mail_Pers" placeholder="Mail"  name="mail_Pers"  id="mail_Pers">
+                </div>
+              </div>
+              <div class="row form-group">
+                  <button class="btn btn-secondary active mr-2 mb-3">Annuler</button>
+                  <button class="btn btn-primary active mr-2 mb-3" type="submit" >Valider</button>
+              </div>
+            </div>
+          </form>
+           </div>
+          </div> <!-- END row-->
+        </div> <!-- END container-->
+      </div>
+    </div>
+  </div> <!-- END tab-content-->
+</section> <!-- END section-->
+    
+   
