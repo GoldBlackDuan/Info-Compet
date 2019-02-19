@@ -249,7 +249,17 @@ app.get('/participant', function (req, res) {
      });
  });
 
+//
+app.put('/pt_etat/:id_Pers/:etat', function (req, res) {
+   console.log(" ----------- "+req.body.id_Pers);
+   connexion.query('UPDATE participant SET etat=? WHERE id_Pers=?', [req.params.etat,req.params.id_Pers], function (error, results, fields) {
 
+      if (error) {res.end('non');
+       
+      }else{res.end('oui');}
+  
+    });
+});
  
  app.put('/participant_etat/:id_Pers/:etat', function (req, res) {
    console.log(" ----------- "+req.body.id_Pers);
