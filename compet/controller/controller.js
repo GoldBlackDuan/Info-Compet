@@ -136,6 +136,14 @@ app.post('/postuler', function (req, res) {
     });
  });
 
+ app.get('/route_ojhrganisateur_detail/:id_Comp', function (req, res) {
+   connexion.query('select organisateur.id_Pers,organisateur.nom_Pers, organisateur.prenom_Pers,organisateur.mail_Pers from competition,organisateur,organiser where organisateur.id_Pers=organiser.id_Pers and organiser.id_Comp=competition.id_Comp and competition.id_Comp=?', [req.params.id_Comp], function (error, results, fields) {
+      if (error) throw error;
+      res.end(JSON.stringify(results));
+    });
+ });
+
+
 
    //..////// nombre de participant par competition
    app.get('/route_nbre_participant/:id_Comp', function (req, res) {
