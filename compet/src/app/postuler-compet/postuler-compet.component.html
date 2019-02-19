@@ -1,0 +1,62 @@
+<div class="padding-y-80 bg-cover" data-dark-overlay="6" style="background:url(assets/img/breadcrumb-bg.jpg) no-repeat">
+  <div class="container">
+    <h2 class="text-white">
+      Gestion des competitions
+    </h2>
+    <ol class="breadcrumb breadcrumb-double-angle text-white bg-transparent p-0">  
+      <li class="breadcrumb-item" ><a routerLink = "../listcompetition" routerLinkActive = "active">Liste des competitons</a></li>
+    </ol>
+  </div>
+</div>
+<section class="padding-y-0 border-bottom border-center">
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="form-basic" role="tabpanel">
+      <div class="padding-y-0">
+        <div class="container">
+          <div class="row mt-5">
+           <div class="col-12 text-center my-5">
+             <h4>
+               Postuler a une competition
+             </h4>
+           </div>
+
+      
+             <form #Form="ngForm" (ngSubmit)="onSubmit()">
+            <div class="col-12 mx-auto">
+              <div class="row form-group">
+                <label for="example-text-input" class="col-2 col-form-label text-left">Competition</label>
+                <div class="col-10">
+                  <h3>Competition x</h3>
+                </div>
+              </div>
+              <div class="row form-group">
+                <label for="example-text-input" class="col-2 col-form-label text-left">Document demander</label>
+                <div class="col-10">
+                  <input class="form-control" type="file" name="description"   placeholder="Descritpion"  id="description">
+                </div>
+              </div>
+              <div class="row form-group">
+                <label for="example-text-input" class="col-2 col-form-label text-left">Lettre de motivation</label>
+                <div class="col-10">
+                 <textarea class="form-control"   rows="15" cols="150" name="conditions" id="conditions" placeholder="Lettre de motivation"></textarea>
+                </div>
+              </div>
+              
+              <div class="row form-group">
+                  <button class="btn btn-secondary active mr-2 mb-3">Annuler</button>
+                  <button class="btn btn-primary active mr-2 mb-3" type="submit" >Valider</button><!--  (click) = "doClick(nom.value,description.value,condition.value,categories.value)" -->
+              </div>
+            </div>
+          </form>
+         
+
+
+          
+          </div> <!-- END row-->
+        </div> <!-- END container-->
+      </div>
+    </div>
+  </div> <!-- END tab-content-->
+</section> <!-- END section-->
+    
+   

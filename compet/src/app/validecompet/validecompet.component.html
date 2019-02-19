@@ -1,0 +1,158 @@
+<section class="padding-y-100 border-bottom border-light">
+    <div class="container">
+      <ul class="nav tab-line tab-line tab-line--2x border-bottom justify-content-center mb-4" role="tablist">
+       <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#btn-dafault" role="tab" aria-selected="true">
+          Detail competition
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#btn-pill" role="tab" aria-selected="true">
+          Condition
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#btn-square" role="tab" aria-selected="true">
+          Liste des candidatures
+        </a>
+       </li>
+      
+
+      </ul>
+    </div> <!-- END container-->
+    
+    
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="btn-dafault" role="tabpanel">
+         
+          
+          <div style="margin: auto; width:70%">
+              <br>
+              <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <thead class="thead-dark">
+                <tr>
+                <th>Libelle</th>
+                <th>Description</th>
+                <th>Categorie</th>
+                </tr>
+                <tbody >
+                    <tr *ngFor="let value of detailcompet">
+                   
+                        <td>{{value.nom_Comp}}</td>
+                        <td>{{value.description}}</td>
+                        <td>{{value.libelle}}</td>
+                        
+                       </tr>
+              </tbody>
+              </table>
+            </div>
+          
+      </div> <!-- END tab-pane #btn-dafault-->
+  
+      <div class="tab-pane fade" id="btn-pill" role="tabpanel">
+
+          <div style="margin: auto; width:70%">
+              <br>
+              <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <thead class="thead-dark">
+                <tr>
+             
+                <th>Condition(s)</th>
+               
+                </tr>
+                <tbody >
+                    <tr *ngFor="let value1 of detailcompet">
+                     
+                        <td>{{value1.conditions}}</td>
+                         </tr>
+              </tbody>
+              </table>
+            </div>
+          
+      </div> <!-- END tab-pane #btn-pill-->
+      
+      <div class="tab-pane fade" id="btn-square" role="tabpanel">
+          
+          <div style="margin: auto; width:70%">
+              <br>
+              <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <thead class="thead-dark">
+                <tr>
+                <th>Nom et prenom(s)</th>
+                <th>Date.inscr</th>
+                <th>Statut</th>
+                <th>Action(s)</th>
+                </tr>
+                <tbody >
+                    <tr *ngFor="let valuee of listecandidature">
+                        <td>{{valuee.nom_Pers}} {{valuee.prenom_Pers}}</td>
+                        <td>{{valuee.date_inscrit}}</td>
+                        <td>{{valuee.etat}}</td>
+                        <td><button class="btn btn-danger btn-xs mr-3 mb-3"  type="button" 
+                          data-toggle="modal" data-target="#modal__large">Etudier le dossier</button></td>
+                      </tr>
+              </tbody>
+              </table>
+            </div>
+          
+          
+      </div> <!-- END tab-pane #btn-square-->
+ 
+      
+    </div> <!-- END tab-content-->
+
+    
+  </section> <!-- END section-->
+      
+     
+   <!-- Modal large-->
+<div class="modal fade" id="modal__large" tabindex="-1" role="dialog" aria-labelledby="modal__large" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">New message to @echotheme</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="ti-close font-size-14"></i>
+          </button>
+        </div>
+        <div class="modal-header">
+
+
+
+
+                <div class="row col-lg-12">
+                  <div class="col-lg-1">
+                    <img class="iconbox mr-3" src="assets/img/avatar/4.jpg" alt="">
+                    </div>
+                    <div class="col-lg-3">
+                      <p>Nom & prenom(s)</p>
+                      <p>Age</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p>TOTO</p>
+                        <p>20 an(s)</p>
+                      </div>
+                </div>
+
+
+
+
+        </div>
+        <div class="modal-body py-4">
+            <p>Lettre de motivaton</p>
+            <div class="ec-video-container my-4">
+                <iframe src="https://www.youtube.com/embed/nrJtHemSPW4?rel=0"></iframe>
+              </div>
+            <p>Document</p>
+            <div class="ec-video-container my-4">
+                <iframe src="https://www.youtube.com/embed/nrJtHemSPW4?rel=0"></iframe>
+              </div>
+        </div>
+        <div class="modal-footer py-4">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-success">Valider</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      

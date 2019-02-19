@@ -1,20 +1,172 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+
+  <header class="site-header bg-dark text-white-0_5">        
+    <div class="container">
+      <div class="row align-items-center justify-content-between mx-0">
+        <ul class="list-inline d-none d-lg-block mb-0">
+          <li class="list-inline-item mr-3">
+           <div class="d-flex align-items-center">
+            <i class="ti-email mr-2"></i>
+            <a href="mailto:support@educati.com">infocomplet@yahoo.fr</a>
+           </div>
+          </li>
+          <li class="list-inline-item mr-3">
+           <div class="d-flex align-items-center">
+            <i class="ti-headphone mr-2"></i>
+            <a href="tel:+8801740411513">+33 78 45 67 89</a>
+           </div>
+          </li>
+        </ul>
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item mr-0 p-3 border-right border-left border-white-0_1">
+            <a href="#"><i class="ti-facebook"></i></a>
+          </li>
+          <li class="list-inline-item mr-0 p-3 border-right border-white-0_1">
+            <a href="#"><i class="ti-twitter"></i></a>
+          </li>
+          <li class="list-inline-item mr-0 p-3 border-right border-white-0_1">
+            <a href="#"><i class="ti-vimeo"></i></a>
+          </li>
+          <li class="list-inline-item mr-0 p-3 border-right border-white-0_1">
+            <a href="#"><i class="ti-linkedin"></i></a>
+          </li>
+        </ul>
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item mr-0 p-md-3 p-2 border-right border-left border-white-0_1">
+            <a class="nav-link" routerLink = "login" routerLinkActive = "active">Login</a>
+          </li>
+          <li class="list-inline-item mr-0 p-md-3 p-2 border-right border-white-0_1">
+            <a class="nav-link " routerLink = "inscription" routerLinkActive = "active"  >Inscription</a>
+          </li>
+        </ul>
+      </div> 
+    </div> 
+  </header>
+  <nav class="ec-nav sticky-top bg-white">
+      <div class="container">
+        <div class="navbar p-0 navbar-expand-lg">
+          <div class="navbar-brand">
+            <a class="logo-default" href="index.html"><img alt="" src="assets/img/logo-black.png"></a>
+          </div>
+          <span aria-expanded="false" class="navbar-toggler ml-auto collapsed" data-target="#ec-nav__collapsible" data-toggle="collapse">
+            <div class="hamburger hamburger--spin js-hamburger">
+              <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+              </div>
+            </div>
+          </span>
+          <div class="collapse navbar-collapse when-collapsed" id="ec-nav__collapsible">
+            <ul class="nav navbar-nav ec-nav__navbar ml-auto">
+    
+                <li class="nav-item nav-item__has-megamenu megamenu-col-2">
+                  <a class="nav-link" href="#" >Acceuil</a>
+                </li>
+                <li class="nav-item nav-item__has-dropdown">
+                  <a class="nav-link " routerLink = "listadmin" routerLinkActive = "active" >Adminstration</a>
+              </li>
+              <li class="nav-item nav-item__has-dropdown">
+                <a class="nav-link " routerLink = "enregcategorie" routerLinkActive = "active" >Categorie</a>
+            </li>
+                <li class="nav-item nav-item__has-dropdown">
+                    <a class="nav-link " routerLink = "listcompetition" routerLinkActive = "active" >Competition</a>
+                </li>
+                
+                <li class="nav-item nav-item__has-dropdown">
+                  <a class="nav-link " routerLink = "listeorganisateur" routerLinkActive = "active" >Organisateur</a>
+              </li>
+              <li class="nav-item nav-item__has-dropdown">
+                <a class="nav-link " routerLink = "listparticipant" routerLinkActive = "active" >Participant</a>
+            </li>
+           
+
+              </ul>
+          </div>	
+        </div>
+      </div> 
+      </nav> 
+
+
+      <router-outlet></router-outlet>
+      
+<div class="scroll-top">
+  <i class="ti-angle-up"></i>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<footer class="site-footer" >
+  <div class="footer-top bg-dark text-white-0_6 pt-5 paddingBottom-100">
+    <div class="container"> 
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6 mt-5">
+         <img src="assets/img/logo-white.png" alt="Logo">
+         <div class="margin-y-40">
+           <p hidden>
+              Copyright © 2019 Info-Complet. All rights reserved.
+          </p>
+         </div>
+          <ul class="list-inline"> 
+            <li class="list-inline-item"><a class="iconbox bg-white-0_2 hover:primary" href="#"><i class="ti-facebook"> </i></a></li>
+            <li class="list-inline-item"><a class="iconbox bg-white-0_2 hover:primary" href="#"><i class="ti-twitter"> </i></a></li>
+            <li class="list-inline-item"><a class="iconbox bg-white-0_2 hover:primary" href="#"><i class="ti-linkedin"> </i></a></li>
+            <li class="list-inline-item"><a class="iconbox bg-white-0_2 hover:primary" href="#"><i class="ti-pinterest"></i></a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mt-5">
+          <h4 class="h5 text-white">Nous contacter</h4>
+          <div class="width-3rem bg-primary height-3 mt-3"></div>
+          <ul class="list-unstyled marginTop-40">
+            <li class="mb-3"><i class="ti-headphone mr-3"></i><a href="#">07 68 95 43 87 </a></li>
+            <li class="mb-3"><i class="ti-email mr-3"></i><a href="#">infoconcours@yahoo.fr</a></li>
+            <li class="mb-3">
+             <div class="media">
+              <i class="ti-location-pin mt-2 mr-3"></i>
+              <div class="media-body">
+                <span> 41 rue Perier 92120 Montroug, Paris France</span>
+              </div>
+             </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 mt-5">
+          <h4 class="h5 text-white">Liens rapides</h4>
+          <div class="width-3rem bg-primary height-3 mt-3"></div>
+          <ul class="list-unstyled marginTop-40">
+            <li class="mb-2"><a href="#">A propos</a></li>
+            <li class="mb-2"><a href="#">Nous contacter</a></li>
+            <li class="mb-2">  <a  routerLink = "login" routerLinkActive = "active" >Connexion</a></li>
+            <li class="mb-2">  <a  routerLink = "inscription" routerLinkActive = "active" >Inscription</a></li>
+          
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5" hidden>
+          <h4 class="h5 text-white">Newslatter</h4>
+          <div class="width-3rem bg-primary height-3 mt-3"></div>
+          <div class="marginTop-40">
+            <p class="mb-4">Subscribe to get update and information. Don't worry, we won't send spam!</p>
+            <form class="marginTop-30" action="#" method="POST">
+              <div class="input-group">
+                <input type="text" placeholder="Enter your email" class="form-control py-3 border-white" required="">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="submit">Subscribe</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+      </div> <!-- END row-->
+    </div> <!-- END container-->
+  </div> <!-- END footer-top-->
+
+  <div class="footer-bottom bg-black-0_9 py-5 text-center">
+    <div class="container">
+      <p class="text-white-0_5 mb-0">&copy; 2019 Info-Complet. All rights reserved.</p>
+    </div>
+  </div>  <!-- END footer-bottom-->
+</footer> <!-- END site-footer -->
+
+
+
+
 

@@ -1,0 +1,197 @@
+<div class="padding-y-60 bg-cover" data-dark-overlay="6" style="background:url(assets/img/breadcrumb-bg.jpg) no-repeat">
+  <div class="container">
+   <div class="row align-items-center">
+     <div class="col-lg-6 my-2 text-white">
+      <h2 class="h2">
+        Detail d'une competition
+      </h2>
+    </div>
+   </div>
+  </div>
+</div>
+
+    
+  
+
+<section class="py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 z-index-10" data-offset-top-md="-40">
+        <ul class="list-inline d-inline-block py-2 px-4 shadow-v3 bg-white rounded-pill">
+          <li class="list-inline-item">Envoyer <span class="d-none d-md-inline-block">ce concours par:</span></li>
+          <li class="list-inline-item mx-0">
+            <a href="#" class="btn btn-opacity-primary iconbox iconbox-xs">
+              <i class="ti-facebook"></i>
+            </a>
+          </li>
+          <li class="list-inline-item mx-0">
+            <a href="#" class="btn btn-opacity-primary iconbox iconbox-xs">
+              <i class="ti-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item mx-0">
+            <a href="#" class="btn btn-opacity-primary iconbox iconbox-xs">
+              <i class="ti-linkedin"></i>
+            </a>
+          </li>
+          <li class="list-inline-item mx-0">
+            <a href="#" class="btn btn-opacity-primary iconbox iconbox-xs">
+              <i class="ti-google"></i>
+            </a>
+          </li>
+        </ul>  
+        <button class="btn btn-pill btn-success mr-2 mb-3" (click)="postuler()">Postuler</button>
+      </div>
+   </div> <!-- END row-->
+  </div>
+</section>
+
+<section class="paddingBottom-100"  *ngFor = "let nbre_participant of nbre_participant">
+  <div class="container"  *ngFor = "let detailcompetition of detailcompetition">
+   <div class="row">
+      <div class="col-lg-12 marginTop-10">
+        <h1>
+          {{detailcompetition.nom_Comp}}
+        </h1>
+        <div class="row mt-3">
+          <div class="col-lg-3 col-md-6 my-2">
+            <div class="media border-right height-100p">
+              <img class="iconbox mr-3" src="assets/img/avatar/4.jpg" alt="">
+              <div class="media-body">
+                <span class="text-gray d-block">Organisateur:</span>
+                <a href="#" class="h6">{{detailcompetition.nom_Pers}} {{detailcompetition.prenom_Pers}}</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 my-2">
+              <div class="border-right height-100p">
+                <span class="text-gray">Mail</span>
+                <p class="mb-0">
+                  <span class="text-dark">{{detailcompetition.mail_Pers}}</span>
+                </p>
+              </div>
+            </div>
+          <div class="col-lg-3 col-md-6 my-2">
+            <div class="border-right height-100p">
+              <span class="text-gray d-block">Categories:</span>
+              <a href="#" class="h6">{{detailcompetition.libelle}}</a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 my-2">
+            <div class="border-right height-100p">
+              <span class="text-gray">Nombre de postulant:</span>
+              <p class="mb-0">
+                <span class="text-dark">{{nbre_participant.nbre}}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="ec-video-container my-4">
+          <iframe src="https://www.youtube.com/embed/nrJtHemSPW4?rel=0"></iframe>
+        </div>
+        <div class="card padding-30 shadow-v3">
+          <h4>
+            Detail
+          </h4>
+          <ul class="list-inline mb-0 mt-2">
+            <li class="list-inline-item my-2 pr-md-4">
+              <i class="ti-user small text-primary"></i>
+              <span class="ml-2">{{nbre_participant.nbre}} Postulant(s)</span>
+            </li>
+            <li class="list-inline-item my-2 pr-md-4">
+              <i class="ti-time small text-primary"></i>
+              <span class="ml-2">Date du debut: </span>
+              <span class="ml-2">{{detailcompetition.date_debut}}</span>
+            </li>
+            <li class="list-inline-item my-2 pr-md-4">
+                <i class="ti-time small text-primary"></i>
+                <span class="ml-2">Date de  la fin: </span>
+                <span class="ml-2">{{detailcompetition.date_fin}}</span>
+              </li>
+          </ul>
+        </div>
+        <div class="col-12 mt-4">
+         <ul class="nav tab-line tab-line tab-line--3x border-bottom mb-5" role="tablist">
+           <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#tabDescription" role="tab" aria-selected="true">
+              Description
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tabInstructors" role="tab" aria-selected="true">
+              Organisateur
+            </a>
+           </li>
+         </ul>
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="tabDescription" role="tabpanel">
+              <h4>
+                Description
+              </h4>
+              <p>
+                  {{detailcompetition.description}}
+              </p>
+              <h4>
+                  Conditions
+                </h4>
+              <p>
+                  {{detailcompetition.conditions}}
+              </p>
+              <div class="row mt-5">
+              </div> <!-- END row-->
+            </div> <!-- END tab-pane-->
+            <div class="tab-pane fade" id="tabInstructors" role="tabpanel">
+              <h4 class="mb-4">
+                A propos des organisateurs
+              </h4>
+              <div class="border-bottom mb-4 pb-4">
+                <div class="d-md-flex mb-4" *ngFor = "let value of competition_organisateur">
+                  <a href="#">
+                    <img class="iconbox iconbox-xxxl" src="assets/img/262x230/5.jpg" alt="">
+                  </a>
+                  <div class="media-body ml-md-4 mt-4 mt-md-0">
+                    <h6>
+                        {{value.nom_Pers}} {{value.prenom_Pers}}
+                    </h6>
+                    <p class="mb-2">
+                      <i class="ti-email mr-2"></i> {{value.mail_Pers}}
+                    </p>
+                    <ul class="list-inline" hidden>
+                      <li class="list-inline-item mb-2">
+                        <i class="ti-user mr-1"></i>
+                        147570 studends
+                      </li>
+                      <li class="list-inline-item mb-2">
+                        <i class="ti-book mr-1"></i>
+                        20 Courses
+                      </li>
+                      <li class="list-inline-item mb-2">
+                        <i class="ti-star text-warning mr-1"></i>
+                        4.9 Average Rating (4578)
+                      </li>
+                    </ul>
+                    <a href="#" class="btn btn-outline-primary btn-pill btn-sm">View Profile</a>
+                  </div>
+                </div>
+                <h6 hidden>
+                  Experience as Web Developer
+                </h6>
+                <p hidden>
+                  Investig ationes demons travge vunt lectores legee lrus quodk legunt saepius claritas est conctetur adip sicing. Dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standad dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it make type specimen book. It has survived not only five centuries.
+                </p>
+              </div>
+            </div> <!-- END tab-pane -->
+          </div> <!-- END tab-content-->
+      </div> <!-- END col-12 -->
+      </div> <!-- END col-lg-9 -->
+   </div> <!-- END row-->
+  </div> <!-- END container-->
+</section>
+   
+   
+   
+
+
+
+   
+   

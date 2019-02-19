@@ -1,0 +1,80 @@
+<div class="padding-y-80 bg-cover" data-dark-overlay="6" style="background:url(assets/img/breadcrumb-bg.jpg) no-repeat">
+  <div class="container">
+    <h2 class="text-white">
+      Gestion des competitions
+    </h2>
+    <ol class="breadcrumb breadcrumb-double-angle text-white bg-transparent p-0">  
+      <li class="breadcrumb-item" ><a routerLink = "../listcompetition" routerLinkActive = "active">Liste des competitons</a></li>
+    </ol>
+  </div>
+</div>
+<section class="padding-y-0 border-bottom border-center">
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="form-basic" role="tabpanel">
+      <div class="padding-y-0">
+        <div class="container">
+          <div class="row mt-5">
+           <div class="col-12 text-center my-5">
+             <h4>
+               Enregistrement d'une competition
+             </h4>
+           </div>
+           <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+             <form #Form="ngForm" (ngSubmit)="onSubmit()">
+            <div class="col-12 mx-auto">
+              <div class="row form-group">
+                <label for="example-text-input" class="col-2 col-form-label text-left">Nom</label>
+                <div class="col-10">
+                  <input class="form-control" type="text" name="nom_comp" #nom [(ngModel)]="competition.nom_comp"  placeholder="Nom"  id="nom_comp">
+                </div>
+              </div>
+              <div class="row form-group">
+                <label for="example-text-input" class="col-2 col-form-label text-left">Descritpion</label>
+                <div class="col-10">
+                  <input class="form-control" type="text" name="description" #description [(ngModel)]="competition.description"  placeholder="Descritpion"  id="description">
+                </div>
+              </div>
+              <div class="row form-group">
+                <label for="example-text-input" class="col-2 col-form-label text-left">Condidition(s)</label>
+                <div class="col-10">
+                 <textarea class="form-control" #condition  [(ngModel)]="competition.conditions"  name="conditions" id="conditions" placeholder="Condidition(s)"></textarea>
+                </div>
+              </div>
+              <div class="row form-group">
+                <label for="example-url-input" class="col-2 col-form-label text-left">Categorie</label>
+                <div class="col-10">
+                  <select class="form-control custom-select" name="id_Categ" #categories [(ngModel)]="competition.id_Categ"  id="id_Categ">
+                      <option *ngFor="let value of categorie" value="{{value.id_Categ}}">{{value.libelle}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row form-group">
+                  <button class="btn btn-secondary active mr-2 mb-3">Annuler</button>
+                  <button class="btn btn-primary active mr-2 mb-3" type="submit" >Valider</button><!--  (click) = "doClick(nom.value,description.value,condition.value,categories.value)" -->
+              </div>
+            </div>
+          </form>
+           </div>
+          </div> <!-- END row-->
+        </div> <!-- END container-->
+      </div>
+    </div>
+  </div> <!-- END tab-content-->
+</section> <!-- END section-->
+    
+   
