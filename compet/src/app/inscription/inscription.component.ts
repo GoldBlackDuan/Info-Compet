@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from './../User';
+import { ParticipantService } from './../participant.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-inscription',
@@ -8,22 +9,23 @@ import { User } from './../User';
 })
 export class InscriptionComponent implements OnInit {
 
-  //Property for the gender
-  private gender: string[];
-  //Property for the user
-  private user:User;
-
-  ngOnInit() {
-
-    this.gender =  ['Male', 'Female', 'Others'];
-    //Create a new user object
-    this.user = new User({email:"", password: { pwd: "" , confirmPwd: ""}, gender: this.gender[0], terms: false});
+  angForm: FormGroup;
+  constructor(private participantservice: ParticipantService, private fb: FormBuilder) {
+    this.createForm();
   }
-
-   onFormSubmit({ value, valid}: { value: User, valid: boolean }) {
-    	this.user = value;
-    	console.log( this.user);
-    	console.log("valid: " + valid);
-  	}
+  createForm() {
+    this.angForm = this.fb.group({
+      name: ['', Validators.required],
+      firstname: ['', Validators.required],
+      pseudo: ['', Validators.required],
+      mail: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
+  addCoin(name, firstname, pseudo, mail, password) {
+    this.participantservice.addPart(name, firstname, pseudo, mail, password);
+  }
+  ngOnInit() {
+  }
 
 }
