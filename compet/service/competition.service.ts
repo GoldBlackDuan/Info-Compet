@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { HttpModule } from '@angular/http';
 import { Competition } from 'src/app/classe/competition';
 import { Organisateur } from 'src/app/classe/organisateur';
+import { Postuler } from 'src/app/classe/postuler';
 
 
 @Injectable({
@@ -26,8 +27,18 @@ export class CompetitionService {
   getCompetitions_voir_categorie(libelle:string) {
     return this.http.get(AttribGlob.BASE_API_URL+'/competition_voir_categorie/'+libelle);
   }
+
+  getCompetitions_voir_categorie_NVall(id_Pers:number) {
+    return this.http.get(AttribGlob.BASE_API_URL+'/competition_voir_categorie_nv/'+id_Pers);
+  }
+  getCompetitions_voir_listecandidature(id_Comp:number) {
+    return this.http.get(AttribGlob.BASE_API_URL+'/competition_voir_listecandidature/'+id_Comp);
+  }
   
 
+  getCompetitions_voir_categorie_NV(id_Pers:number,libelle:string) {
+    return this.http.get(AttribGlob.BASE_API_URL+'/competition_voir_categorie_nv/'+id_Pers+'/'+libelle);
+  }
   getCompetitionById(id_Comp: number) {
     return this.http.get<Competition>(AttribGlob.BASE_API_URL + '/'+this.routename+'/' + id_Comp);
   }
@@ -53,4 +64,11 @@ export class CompetitionService {
   getNbreParticipant(id_Comp: number) {
     return this.http.get<Competition>(AttribGlob.BASE_API_URL + '/route_nbre_participant/' + id_Comp);
   }
+
+
+  createParticiper(postuler:Postuler) {
+    
+    return this.http.post(AttribGlob.BASE_API_URL+'/postuler', postuler);
+  }
+
 }

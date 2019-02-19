@@ -36,11 +36,11 @@
                 <th>Categorie</th>
                 </tr>
                 <tbody >
-                    <tr>
-                      <input id="id_Comp" value="{{value.id_Comp}}" hidden>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr *ngFor="let value of detailcompet">
+                   
+                        <td>{{value.nom_Comp}}</td>
+                        <td>{{value.description}}</td>
+                        <td>{{value.libelle}}</td>
                         
                        </tr>
               </tbody>
@@ -61,9 +61,9 @@
                
                 </tr>
                 <tbody >
-                    <tr >
+                    <tr *ngFor="let value1 of detailcompet">
                      
-                        <td></td>
+                        <td>{{value1.conditions}}</td>
                          </tr>
               </tbody>
               </table>
@@ -79,17 +79,15 @@
                 <thead class="thead-dark">
                 <tr>
                 <th>Nom et prenom(s)</th>
-                <th>Adresse</th>
+                <th>Date.inscr</th>
                 <th>Statut</th>
                 <th>Action(s)</th>
-                
                 </tr>
                 <tbody >
-                    <tr >
-                
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr *ngFor="let valuee of listecandidature">
+                        <td>{{valuee.nom_Pers}} {{valuee.prenom_Pers}}</td>
+                        <td>{{valuee.date_inscrit}}</td>
+                        <td>{{valuee.etat}}</td>
                         <td><button class="btn btn-danger btn-xs mr-3 mb-3"  type="button" 
                           data-toggle="modal" data-target="#modal__large">Etudier le dossier</button></td>
                       </tr>

@@ -1,3 +1,53 @@
+<<<<<<< HEAD
+<header class="site-header">
+  <nav class="ec-nav sticky-top bg-white">
+    <div class="container">
+      <div class="navbar p-0 navbar-expand-lg">
+        <div class="navbar-brand">
+          <a class="logo-default" href="index.html"><img alt="" src="assets/img/logo-black.png"></a>
+        </div>
+
+        <span aria-expanded="false" class="navbar-toggler ml-auto collapsed" data-target="#ec-nav__collapsible"
+          data-toggle="collapse">
+          <div class="hamburger hamburger--spin js-hamburger">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+        </span>
+
+        <div class="collapse navbar-collapse when-collapsed" id="ec-nav__collapsible">
+          <ul class="nav navbar-nav ec-nav__navbar ml-auto">
+            <li class="nav-item nav-item__has-megamenu megamenu-col-2">
+              <a class="nav-link" href="">Acceuil</a>
+            </li>
+            <li class="nav-item nav-item__has-dropdown">
+              <a class="nav-link" routerLink="listedescompetiton" routerLinkActive="active">Compétitions</a>
+            </li>
+            <li class="nav-item nav-item__has-dropdown">
+              <a class="nav-link" routerLink='regle' routerLinkActive='active'>Les règles à suivre</a>
+            </li>
+            <li class="nav-item nav-item__has-dropdown">
+              <a class="nav-link" routerLink='contact' routerLinkActive='active'>Contact</a>
+            </li>
+            <li class="nav-item nav-item__has-dropdown">
+              <button class="btn btn-primary" data-toggle="modal" data-target="#ModalUser" style="margin-top: 20px;">
+                <i class="ti-user"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>
+
+<div class="scroll-top">
+  <i class="ti-angle-up"></i>
+</div>
+=======
 
   <header class="site-header bg-dark text-white-0_5">        
     <div class="container">
@@ -169,4 +219,249 @@
 
 
 
+>>>>>>> 5024162b8ce999018ebca2619cbd6a895b3d67fb
 
+<!-- Modal -->
+<div class="modal fade" id="ModalUser" tabindex="-1" role="dialog" aria-labelledby="ModalUserLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="max-width: 75%;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalUserLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="container">
+        <div class="row">
+
+          <!-- Section Inscription -->
+          <section id="inscription">
+            <div class="row">
+              <div class="mx-auto">
+                <div class="card shadow-v2">
+                  <div class="card-header border-bottom" style="text-align: center">
+                    <h4 class="mt-4">
+                      Inscrivez-vous!
+                    </h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col my-2">
+                        <button class="btn btn-block btn-facebook">
+                          <i class="ti-facebook mr-1"></i>
+                          <span>Facebook Sign in</span>
+                        </button>
+                      </div>
+                      <div class="col my-2">
+                        <button class="btn btn-block btn-google-plus">
+                          <i class="ti-google mr-1"></i>
+                          <span>Google Sign in</span>
+                        </button>
+                      </div>
+                    </div>
+                    <p class="text-center my-4">
+                      OU
+                    </p>
+                    <form #Form="ngForm" (ngSubmit)="onSubmit()">
+                      <div class="input-group input-group--focus mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text bg-white ti-user"></span>
+                        </div>
+                        <input type="text" class="form-control border-left-0 pl-0" [(ngModel)]="participant.nom_Pers"
+                          placeholder="Nom" name="nom_Pers" id="nom_Pers">
+                      </div>
+                      <div class="input-group input-group--focus mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text bg-white ti-user"></span>
+                        </div>
+                        <input type="text" class="form-control border-left-0 pl-0" [(ngModel)]="participant.prenom_Pers"
+                          placeholder="Prenom" name="prenom_Pers" id="prenom_Pers">
+                      </div>
+                      <div class="input-group input-group--focus mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text bg-white ti-user"></span>
+                        </div>
+                        <input type="text" class="form-control border-left-0 pl-0" [(ngModel)]="participant.pseudo"
+                          placeholder="Pseudo" name="pseudo" id="pseudo">
+                      </div>
+                      <div class="input-group input-group--focus mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text bg-white ti-email"></span>
+                        </div>
+                        <input type="email" class="form-control border-left-0 pl-0" [(ngModel)]="participant.mail_Pers"
+                          placeholder="Email" name="mail_Pers" id="mail_Pers">
+                      </div>
+                      <div class="input-group input-group--focus mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text bg-white ti-lock"></span>
+                        </div>
+                        <input type="password" class="form-control border-left-0 pl-0" placeholder="Mot de passe"
+                          required>
+                      </div>
+                      <div class="input-group input-group--focus mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text bg-white ti-lock"></span>
+                        </div>
+                        <input type="password" class="form-control border-left-0 pl-0"
+                          [(ngModel)]="participant.password" name="password" id="password" placeholder="Confirmation"
+                          required>
+                      </div>
+
+                      <button class="btn btn-block btn-primary" type="submit" data-dismiss="modal">Creer un
+                        profil</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- END row-->
+          </section>
+          <!-- Fin Section Inscription -->
+
+          <div id="hr"></div>
+
+          <!-- Section Connection -->
+          <section id="connection">
+            <div class="row">
+              <div class="mx-auto">
+                <div class="card shadow-v2">
+                  <div class="card-header border-bottom" style="text-align: center">
+                    <h4 class="mt-4">
+                      Connectez-vous à votre profil
+                    </h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col my-2">
+                        <button class="btn btn-block btn-facebook">
+                          <i class="ti-facebook mr-1"></i>
+                          <span>Facebook Sign in</span>
+                        </button>
+                      </div>
+                      <div class="col my-2">
+                        <button class="btn btn-block btn-google-plus">
+                          <i class="ti-google mr-1"></i>
+                          <span>Google Sign in</span>
+                        </button>
+                      </div>
+                    </div>
+                    <p class="text-center my-4">
+                      OU
+                    </p>
+                    <form (submit)="loginUser($event)">
+                      <div class="input-group input-group--focus mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text bg-white ti-email"></span>
+                        </div>
+                        <input type="text" class="form-control border-left-0 pl-0" placeholder="Email" id="email">
+                      </div>
+                      <div class="input-group input-group--focus mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text bg-white ti-lock"></span>
+                        </div>
+                        <input type="password" class="form-control border-left-0 pl-0" placeholder="Mot de passe"
+                          id="password">
+                      </div>
+                      <div class="d-md-flex justify-content-between my-4">
+                        <label class="ec-checkbox check-sm my-2 clearfix">
+                          <input type="checkbox" name="checkbox">
+                          <span class="ec-checkbox__control"></span>
+                          <span class="ec-checkbox__lebel">Se souvenir de moi</span>
+                        </label>
+                        <a href="page-recover-password.html" class="text-primary my-2 d-block">Mot de passe
+                          oublié?</a>
+                      </div>
+                      <button class="btn btn-block btn-primary" type="submit" value="Submit">S'identifier</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- END row-->
+          </section>
+          <!-- Fin Section Connection -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-top bg-dark text-white-0_6 pt-5 paddingBottom-100">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6 mt-5">
+          <img src="assets/img/logo-white.png" alt="Logo">
+          <div class="margin-y-40">
+            <p hidden>
+              Copyright © 2019 Info-Complet. All rights reserved.
+            </p>
+          </div>
+          <ul class="list-inline">
+            <li class="list-inline-item iconbox facebook"><a href="#"><i class="ti-facebook">
+                </i></a></li>
+            <li class="list-inline-item iconbox twitter"><a href="#"><i class="ti-twitter">
+                </i></a></li>
+            <li class="list-inline-item iconbox google"><a href="#"><i class="ti-google">
+                </i></a></li>
+            <li class="list-inline-item iconbox pinterest"><a href="#"><i class="ti-pinterest"></i></a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mt-5">
+          <h4 class="h5 text-white">Nous contacter</h4>
+          <div class="width-3rem bg-primary height-3 mt-3"></div>
+          <ul class="list-unstyled marginTop-40">
+            <li class="mb-3"><i class="ti-headphone mr-3"></i><a href="#">07 68 95 43 87 </a></li>
+            <li class="mb-3"><i class="ti-email mr-3"></i><a href="#">infoconcours@yahoo.fr</a></li>
+            <li class="mb-3">
+              <div class="media">
+                <i class="ti-location-pin mt-2 mr-3"></i>
+                <div class="media-body">
+                  <span> 41 rue Perier 92120 Montroug, Paris France</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 mt-5">
+          <h4 class="h5 text-white">Liens rapides</h4>
+          <div class="width-3rem bg-primary height-3 mt-3"></div>
+          <ul class="list-unstyled marginTop-40">
+            <li class="mb-2"><a href="#">A propos</a></li>
+            <li class="mb-2"><a href="#">Nous contacter</a></li>
+            <li class="mb-2"> <a routerLink="login" routerLinkActive="active">Connexion</a></li>
+            <li class="mb-2"> <a routerLink="inscription" routerLinkActive="active">Inscription</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-5" hidden>
+          <h4 class="h5 text-white">Newslatter</h4>
+          <div class="width-3rem bg-primary height-3 mt-3"></div>
+          <div class="marginTop-40">
+            <p class="mb-4">Subscribe to get update and information. Don't worry, we won't send spam!</p>
+            <form class="marginTop-30" action="#" method="POST">
+              <div class="input-group">
+                <input type="text" placeholder="Enter your email" class="form-control py-3 border-white" required="">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="submit">Subscribe</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div> <!-- END row-->
+    </div> <!-- END container-->
+  </div> <!-- END footer-top-->
+
+  <div class="footer-bottom bg-black-0_9 py-5 text-center">
+    <div class="container">
+      <p class="text-white-0_5 mb-0">&copy; 2019 Info-Complet. All rights reserved.</p>
+    </div>
+  </div> <!-- END footer-bottom-->
+</footer> <!-- END site-footer -->
+<a class="nav-link" routerLink="inscription" routerLinkActive="active">Compétitions</a>

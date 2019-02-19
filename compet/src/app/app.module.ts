@@ -27,6 +27,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { ListecompetParticipantComponent } from './listecompet-participant/listecompet-participant.component';
 import { DetailCompetitonParticipantComponent } from './detail-competiton-participant/detail-competiton-participant.component';
 import { PostulerCompetComponent } from './postuler-compet/postuler-compet.component';
+import { ListecompetitonNVComponent } from './listecompetiton-nv/listecompetiton-nv.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { PostulerCompetComponent } from './postuler-compet/postuler-compet.compo
     InscriptionComponent,
     ListecompetParticipantComponent,
     DetailCompetitonParticipantComponent,
-    PostulerCompetComponent
+    PostulerCompetComponent,
+    ListecompetitonNVComponent
   ],
   imports: [
     BrowserModule,
@@ -58,12 +60,108 @@ import { PostulerCompetComponent } from './postuler-compet/postuler-compet.compo
     HttpClientModule,
     RouterModule.forRoot([
       {
+<<<<<<< HEAD
+        path: 'login',
+        component: LoginComponent
+=======
       path: 'login',
       component: LoginComponent
+>>>>>>> 5024162b8ce999018ebca2619cbd6a895b3d67fb
       },
       {
         path: '',
         component: AcceuilComponent
+<<<<<<< HEAD
+      },
+      {
+        path: 'listparticipant',
+        component: ListparticipantComponent
+      },
+      {
+        path: 'listcompetition',
+        component: ListcompetitionComponent
+      },
+      {
+        path: 'enregcompetition',
+        component: EnregcompetitionComponent
+      },
+      {
+        path: 'detailparticipant',
+        component: DetaiparticipantComponent
+      },
+      {
+        path: 'detailcompetition',
+        component: DetailcompetitionComponent
+      },
+      {
+        path: 'listeorganisateur',
+        component: ListeorganisateurComponent
+      }
+      ,
+      {
+        path: 'enregorganisateur',
+        component: EnregorganisateurComponent
+      }
+      ,
+      {
+        path: 'enregcategorie',
+        component: EnregcategorieComponent
+      }
+      ,
+      {
+        path: 'validecompet',
+        component: ValidecompetComponent
+      }
+      ,
+      {
+        path: 'detailorganisateur',
+        component: DetailorganisateurComponent
+      }
+      ,
+      {
+        path: 'listadmin',
+        component: ListadminComponent
+      }
+      ,
+      {
+        path: 'enregadmin',
+        component: EnregadminComponent
+      },
+      {
+        path: 'detailadmin',
+        component: DetailgadminComponent
+      }
+      ,
+      {
+        path: 'validecompet',
+        component: ValidecompetComponent
+      }
+      ,
+      {
+        path: 'inscription',
+        component: InscriptionComponent
+      },
+      {
+        path: 'listedescompetiton',
+        component: ListecompetParticipantComponent
+      }
+
+      ,
+      {
+        path: 'detail_compet_participant',
+        component: DetailCompetitonParticipantComponent
+      }
+      ,
+      {
+        path: 'postuler_compet',
+        component: PostulerCompetComponent
+      }
+      ,
+      {
+        path: 'listecompetitonnv',
+        component: ListecompetitonNVComponent
+      }
+=======
         },
         {
           path: 'listparticipant',
@@ -133,6 +231,11 @@ import { PostulerCompetComponent } from './postuler-compet/postuler-compet.compo
                           {path: 'postuler_compet',
                             component: PostulerCompetComponent
                             }
+                            ,
+                            {path: 'listecompetitonnv',
+                              component: ListecompetitonNVComponent
+                              }
+>>>>>>> 5024162b8ce999018ebca2619cbd6a895b3d67fb
     ])
   ],
   providers: [],

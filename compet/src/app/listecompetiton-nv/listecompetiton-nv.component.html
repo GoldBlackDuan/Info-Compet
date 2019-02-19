@@ -1,0 +1,95 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="py-5 bg-light-v2">
+  <div class="container">
+   <div class="row align-items-center">
+     <div class="col-md-6">
+       <h2>Liste des competitions avec des candidatures</h2>
+     </div>
+     <div class="col-md-6">
+      <ol class="breadcrumb justify-content-md-end bg-transparent">  
+          <div class="col-md-6 my-2">
+              <ul class="list-inline">
+                <li class="list-inline-item my-2">
+                  <select class="form-control" name="id_Categ" #categorie (change)="catvalue(categorie.value)"  id="id_Categ">
+                    <option selected default>Toute</option>
+                    <option *ngFor="let value2 of allCategorie">{{value2.libelle}}</option>
+                  </select>
+                </li>
+              </ul>
+            </div>
+      </ol>
+     </div>
+   </div>
+  </div> 
+</div>  
+
+
+
+
+
+
+
+
+<div class="padding-y-80 bg-cover" data-dark-overlay="6" style="background:url(assets/img/breadcrumb-bg.jpg) no-repeat" hidden>
+<div class="container">
+  <h2 class="text-white">
+    Liste des competitions avec des candidatures
+  </h2>
+</div>
+</div>
+
+
+<section class="paddingTop-50 paddingBottom-100 bg-light">
+  <div class="container" >
+    <div class="row" >
+  
+  
+            <div class="col-lg-4 col-md-6 marginTop-30 wow fadeIn" data-wow-delay=".2s" *ngFor="let value of allCompet">
+                <div class="card shadow-v1">
+                    <img class="w-100" src="assets/img/360x220/1.jpg" alt="">
+                  <div class="padding-40 border-bottom" hidden>
+                  </div>
+                  <ul class="list-unstyled padding-x-40 py-4 line-height-xl">
+                   
+                     {{value.nom_Comp}}
+                    
+                    <li>
+                       <i class="ti-time mr-2 text-primary"></i>
+                       {{value.nom_Comp}}
+                    </li>
+                    <li>
+                       <i class="ti-location-pin mr-2 text-primary"></i>
+                       {{value.libelle}}
+                    </li>
+                    <li>
+                      <p>Valider</p>
+                      <p>En attente</p>
+                      <p>Total</p>
+                    </li>
+
+                    <li>
+                      
+                     <button class="btn btn-warning   btn-xs mr-3 mb-3" type="button" (click)="detail(value.id_Comp)"><i class="ti-eye"></i><span> Detail</span></button> 
+                     <button class="btn btn-success   btn-xs mr-3 mb-3" type="button" (click)="valider(value.id_Comp)"> <i class="ti-check-box mr-2"></i><span> Etudier les candidatures</span></button> 
+                   
+                  
+                    </li>
+                  </ul>    
+                </div>
+              </div>
+       
+    
+    </div> <!--END row-->
+  </div> <!--END container-->
+</section>
