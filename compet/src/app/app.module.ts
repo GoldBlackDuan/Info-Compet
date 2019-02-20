@@ -60,18 +60,12 @@ import { ListecompetitonNVComponent } from './listecompetiton-nv/listecompetiton
     HttpClientModule,
     RouterModule.forRoot([
       {
-<<<<<<< HEAD
         path: 'login',
         component: LoginComponent
-=======
-      path: 'login',
-      component: LoginComponent
->>>>>>> 5024162b8ce999018ebca2619cbd6a895b3d67fb
       },
       {
         path: '',
         component: AcceuilComponent
-<<<<<<< HEAD
       },
       {
         path: 'listparticipant',
@@ -161,81 +155,6 @@ import { ListecompetitonNVComponent } from './listecompetiton-nv/listecompetiton
         path: 'listecompetitonnv',
         component: ListecompetitonNVComponent
       }
-=======
-        },
-        {
-          path: 'listparticipant',
-          component: ListparticipantComponent
-          },
-          {
-            path: 'listcompetition',
-            component: ListcompetitionComponent
-            },
-            {
-              path: 'enregcompetition',
-              component: EnregcompetitionComponent
-              },
-              {path: 'detailparticipant',
-                component: DetaiparticipantComponent
-                },
-                {path: 'detailcompetition',
-                  component: DetailcompetitionComponent
-                  },
-                  {path: 'listeorganisateur',
-                    component: ListeorganisateurComponent
-                    }
-                    ,
-                    {path: 'enregorganisateur',
-                      component: EnregorganisateurComponent
-                      }
-                      ,
-                    {path: 'enregcategorie',
-                      component: EnregcategorieComponent
-                      }
-                      ,
-                    {path: 'validecompet',
-                      component: ValidecompetComponent
-                      }
-                      ,
-                  {path: 'detailorganisateur',
-                    component: DetailorganisateurComponent
-                    }
-                    ,
-                  {path: 'listadmin',
-                    component: ListadminComponent
-                    }
-                    ,
-                  {path: 'enregadmin',
-                    component: EnregadminComponent
-                    } ,
-                    {path: 'detailadmin',
-                      component: DetailgadminComponent
-                      }
-                      ,
-                      {path: 'validecompet',
-                        component: ValidecompetComponent
-                        }
-                        ,
-                        {path: 'inscription',
-                          component: InscriptionComponent
-                          },
-                          {path: 'listedescompetiton',
-                            component: ListecompetParticipantComponent
-                            }
-
-                            ,
-                          {path: 'detail_compet_participant',
-                            component: DetailCompetitonParticipantComponent
-                            }
-                            ,
-                          {path: 'postuler_compet',
-                            component: PostulerCompetComponent
-                            }
-                            ,
-                            {path: 'listecompetitonnv',
-                              component: ListecompetitonNVComponent
-                              }
->>>>>>> 5024162b8ce999018ebca2619cbd6a895b3d67fb
     ])
   ],
   providers: [],
